@@ -14,7 +14,7 @@
         var itemSuper = ModAPI.reflect.getSuper(itemClass, (x) => x.length === 1);
         var nmi_ItemPistol = function nmi_ItemPistol() {
             itemSuper(this); //Use super function to get block properties on this class.
-            this.$setCreativeTab(creativeMiscTab);
+            this.$setCreativeTab(creativeToolTab);
         }
 
         function entityRayCast(player, world, range) {
