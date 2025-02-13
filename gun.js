@@ -62,11 +62,11 @@
             var cactus = DamageSourceClass.staticVariables.cactus;
             var world = ModAPI.util.wrap($world);
             var entityplayer = ModAPI.util.wrap($player);
-            var shotentitydata = entityRayCast(entityplayer, world, 16.0);
+            var shotentitydata = entityRayCast(entityplayer, world, 50.0);
             if (shotentitydata != null){
                 if (world.isRemote) {
                 } else {
-                    shotentitydata.entity.attackEntityFrom(cactus, 100 + (106 * shotentitydata.headshot));
+                    shotentitydata.entity.attackEntityFrom(cactus, 1000 + (1000 * shotentitydata.headshot));
                     if (shotentitydata.headshot) {
                         console.log("H E A D S H O T");
                     }
