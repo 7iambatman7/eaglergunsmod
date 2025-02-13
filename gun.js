@@ -14,7 +14,7 @@
         var itemSuper = ModAPI.reflect.getSuper(itemClass, (x) => x.length === 1);
         var nmi_ItemPistol = function nmi_ItemPistol() {
             itemSuper(this); //Use super function to get block properties on this class.
-            this.$setCreativeTab(creativeToolTab);
+            this.$setCreativeTab(creativeMiscTab);
         }
 
         function entityRayCast(player, world, range) {
@@ -62,11 +62,11 @@
             var cactus = DamageSourceClass.staticVariables.cactus;
             var world = ModAPI.util.wrap($world);
             var entityplayer = ModAPI.util.wrap($player);
-            var shotentitydata = entityRayCast(entityplayer, world, 50.0);
+            var shotentitydata = entityRayCast(entityplayer, world, 1000.0);
             if (shotentitydata != null){
                 if (world.isRemote) {
                 } else {
-                    shotentitydata.entity.attackEntityFrom(cactus, 1000 + (1000 * shotentitydata.headshot));
+                    shotentitydata.entity.attackEntityFrom(cactus, 10000 + (10000 * shotentitydata.headshot));
                     if (shotentitydata.headshot) {
                         console.log("H E A D S H O T");
                     }
