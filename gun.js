@@ -1,9 +1,8 @@
 (()=>{
     const itemTexture = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVFhH7ZQxDoMwDEVNr4G6VmJC6mk4Itdh7VpxjsBPDaKVCLZxypInIccg5zs/CVQoKAj8uHLjeETouo6HvlQcU3yJ932PIKkTceRAFH8NA6dE3IzbVogdQBOPtuVXfk5IJ8jWhKY4SxPaQvcmLEWuTUj/A1sqiEEcTQBENDWjvh3mvZtxccLiwMqvE0DrhNUBCCy1KSdAUsPiwFYcpM5ENrYWh3tdI4cT4dk0MSKPXzMSRSC+PMi14mcO4e7esv2iJqyHEGDVPCR6jyMC5luERXOfuoY7QFi8MKsDe6tXk8OBv7Ge/E96DZeKFwoOEE1wUX7TFh5zsgAAAABJRU5ErkJggg==";
-    const imageTitle = "https://img.itch.zone/aW1hZ2UvMjIzMTI4OS8xMzIxMzU0Mi5wbmc=/original/uDb%2FuU.png";
     ModAPI.meta.title("Pistol");
     ModAPI.meta.version("v1.1");
-    ModAPI.meta.icon(imageTitle);
+    ModAPI.meta.icon(itemTexture);
     ModAPI.meta.description("Requires AsyncSink.");
 
     ModAPI.require("player");
@@ -15,7 +14,7 @@
         var itemSuper = ModAPI.reflect.getSuper(itemClass, (x) => x.length === 1);
         var nmi_ItemPistol = function nmi_ItemPistol() {
             itemSuper(this); //Use super function to get block properties on this class.
-            this.$setCreativeTab(creativeMiscTab);
+            this.$setCreativeTab(creativeComabtTab);
         }
 
         function entityRayCast(player, world, range) {
