@@ -1,5 +1,5 @@
 (()=>{
-    const itemTexture = "https://p.novaskin.me/4064063376.png";
+    const itemTexture = "https://raw.githubusercontent.com/7iambatman7/eaglergunsmod/refs/heads/main/4064063376.png";
     ModAPI.meta.title("guns");
     ModAPI.meta.version("v1.0");
     ModAPI.meta.icon(itemTexture);
