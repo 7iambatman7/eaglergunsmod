@@ -94,7 +94,7 @@
                     type: "block",
                     id: "iron_block" // Using dirt blocks
                 },
-                "Q": {
+                "G": {
                     type: "item",
                     id: "gunpowder" // Using dirt blocks
                 },
@@ -102,8 +102,9 @@
     
             // Define the crafting grid pattern for the recipe
             var recipePattern = [
-                "IIC",
-                " QI"
+                "III",
+                "III"
+                "GII"
             ];
     
             // Convert the recipe pattern and legend into the required format
