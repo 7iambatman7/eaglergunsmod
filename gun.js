@@ -66,7 +66,7 @@
             if (shotentitydata != null){
                 if (world.isRemote) {
                 } else {
-                    shotentitydata.entity.attackEntityFrom(cactus, 10 + (16 * shotentitydata.headshot));
+                    shotentitydata.entity.attackEntityFrom(cactus, 100 + (106 * shotentitydata.headshot));
                     if (shotentitydata.headshot) {
                         console.log("H E A D S H O T");
                     }
