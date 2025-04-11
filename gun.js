@@ -1,18 +1,18 @@
 (()=>{
     const itemTexture = "https://raw.githubusercontent.com/7iambatman7/eaglergunsmod/refs/heads/main/Untitled.png";
-    ModAPI.meta.title("Pistol");
+    ModAPI.meta.title("Sniper");
     ModAPI.meta.version("v1.1");
     ModAPI.meta.icon(itemTexture);
     ModAPI.meta.description("Requires AsyncSink.");
 
     ModAPI.require("player");
 
-    function PistolItem() {
+    function SniperItem() {
         var DamageSourceClass = ModAPI.reflect.getClassByName("DamageSource");
         var creativeMiscTab = ModAPI.reflect.getClassById("net.minecraft.creativetab.CreativeTabs").staticVariables.tabMisc;
         var itemClass = ModAPI.reflect.getClassById("net.minecraft.item.Item");
         var itemSuper = ModAPI.reflect.getSuper(itemClass, (x) => x.length === 1);
-        var nmi_ItemPistol = function nmi_ItemPistol() {
+        var nmi_ItemSniper = function nmi_ItemSniper() {
             itemSuper(this); //Use super function to get block properties on this class.
             this.$setCreativeTab(creativeMiscTab);
         }
@@ -57,8 +57,8 @@
                 return null;
             }
         }
-        ModAPI.reflect.prototypeStack(itemClass, nmi_ItemPistol);
-        nmi_ItemPistol.prototype.$onItemRightClick = function ($itemstack, $world, $player) {
+        ModAPI.reflect.prototypeStack(itemClass, nmi_ItemSniper);
+        nmi_ItemSniper.prototype.$onItemRightClick = function ($itemstack, $world, $player) {
             var cactus = DamageSourceClass.staticVariables.cactus;
             var world = ModAPI.util.wrap($world);
             var entityplayer = ModAPI.util.wrap($player);
@@ -126,13 +126,13 @@
         }
 
         function internal_reg() {
-            var pistol_item = (new nmi_ItemPistol()).$setUnlocalizedName(
-                ModAPI.util.str("pistol")
+            var Sniper_item = (new nmi_ItemSniper()).$setUnlocalizedName(
+                ModAPI.util.str("Sniper")
             ).$setMaxStackSize(1);
-            itemClass.staticMethods.registerItem.method(ModAPI.keygen.item("pistol"), ModAPI.util.str("pistol"), pistol_item);
-            ModAPI.items["pistol"] = pistol_item;
-            addGunRecipe(pistol_item);
-            return pistol_item;
+            itemClass.staticMethods.registerItem.method(ModAPI.keygen.item("Sniper"), ModAPI.util.str("Sniper"), Sniper_item);
+            ModAPI.items["Sniper"] = Sniper_item;
+            addGunRecipe(Sniper_item);
+            return Sniper_item;
         }
 
         if (ModAPI.items) {
@@ -142,19 +142,19 @@
         }
     }
 
-    ModAPI.dedicatedServer.appendCode(PistolItem); 
-    var pistol_item = PistolItem();
+    ModAPI.dedicatedServer.appendCode(SniperItem); 
+    var Sniper_item = SniperItem();
 
     ModAPI.addEventListener("lib:asyncsink", async () => {
         ModAPI.addEventListener("lib:asyncsink:registeritems", (renderItem)=>{
-            renderItem.registerItem(pistol_item, ModAPI.util.str("pistol"));
+            renderItem.registerItem(Sniper_item, ModAPI.util.str("Sniper"));
         });
-        AsyncSink.L10N.set("item.pistol.name", "Pistol");
-        AsyncSink.setFile("resourcepacks/AsyncSinkLib/assets/minecraft/models/item/pistol.json", JSON.stringify(
+        AsyncSink.L10N.set("item.Sniper.name", "Sniper");
+        AsyncSink.setFile("resourcepacks/AsyncSinkLib/assets/minecraft/models/item/Sniper.json", JSON.stringify(
             {
                 "parent": "builtin/generated",
                 "textures": {
-                    "layer0": "items/pistol"
+                    "layer0": "items/Sniper"
                 },
                 "display": {
                     "thirdperson": {
@@ -170,7 +170,7 @@
                 }
             }
         ));
-        AsyncSink.setFile("resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/pistol.png", await (await fetch(
+        AsyncSink.setFile("resourcepacks/AsyncSinkLib/assets/minecraft/textures/items/Sniper.png", await (await fetch(
             itemTexture
         )).arrayBuffer());
     });
