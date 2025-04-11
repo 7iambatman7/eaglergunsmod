@@ -1,5 +1,5 @@
 (()=>{
-    const itemTexture = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVFhH7ZQxDoMwDEVNr4G6VmJC6mk4Itdh7VpxjsBPDaKVCLZxypInIccg5zs/CVQoKAj8uHLjeETouo6HvlQcU3yJ932PIKkTceRAFH8NA6dE3IzbVogdQBOPtuVXfk5IJ8jWhKY4SxPaQvcmLEWuTUj/A1sqiEEcTQBENDWjvh3mvZtxccLiwMqvE0DrhNUBCCy1KSdAUsPiwFYcpM5ENrYWh3tdI4cT4dk0MSKPXzMSRSC+PMi14mcO4e7esv2iJqyHEGDVPCR6jyMC5luERXOfuoY7QFi8MKsDe6tXk8OBv7Ge/E96DZeKFwoOEE1wUX7TFh5zsgAAAABJRU5ErkJggg==";
+    const itemTexture = "https://raw.githubusercontent.com/7iambatman7/eaglergunsmod/refs/heads/main/Untitled.png";
     ModAPI.meta.title("Pistol");
     ModAPI.meta.version("v1.1");
     ModAPI.meta.icon(itemTexture);
